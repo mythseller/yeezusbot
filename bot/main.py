@@ -1,8 +1,6 @@
 import os
 from discord.ext import commands
 
-embed=discord.Embed(title="callout")
-
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
