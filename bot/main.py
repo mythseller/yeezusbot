@@ -11,7 +11,8 @@ async def on_ready():
 @bot.event
 async def on_message(message):
             if "test" in message.content:
-         await ctx.send("pong")
+        await ctx.send("pong")
+        await bot.process_commands(message)
 
 @bot.command()
 async def ping(ctx):
