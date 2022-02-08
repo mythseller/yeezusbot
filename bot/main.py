@@ -11,7 +11,7 @@ async def on_ready():
 @bot.event
 async def on_message(message):
             if "<@&940612391819939840>" in message.content:
-message.client.channels.cache.get('<920900596117155860>').send(message.content)
+message.client.channels.cache.get('<#920900596117155860>').send(message.content)
 
 @bot.command()
 async def ping(ctx):
