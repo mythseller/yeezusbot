@@ -8,7 +8,10 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
     
-
+@bot.listen()
+async def on_message(message):
+if "<@&940612391819939840>" in message.content:
+await channel.send((message.author.name + " " + searched_role.mention), embed=embed)
 
 @bot.command()
 async def ping(ctx):
