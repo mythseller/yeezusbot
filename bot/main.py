@@ -16,7 +16,7 @@ async def on_message(message):
     role_mentions = message.role_mentions
     if message.author.bot: return
     if target_role in role_mentions:
-        await target_channel.send((message.author.name + " " + target_role.mention), embed=embed)
+        await target_channel.send(message.author.name + " " + target_role.mention)
 
 
 @bot.command()
