@@ -13,7 +13,7 @@ async def on_message(message):
     if message.author.bot: return
     guild = message.guild  
     target_channel = guild.get_channel(940719313638293544)  
-    target_role = guild.get_role([940612391819939840]) 
+    target_role = guild.get_role(940612391819939840) 
     role_mentions = message.role_mentions
 
     if target_role in role_mentions:
