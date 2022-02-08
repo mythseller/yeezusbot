@@ -20,7 +20,7 @@ async def on_message(message):
     role_mentions = message.role_mentions
 
     if role_1 in message.role_mentions: 
-        await target_channel.send((message.author.name + " " + searched_role.mention), embed=embed)
+        await target_channel.send(message.author.name + " -- " + message.content)
     elif role_2 in message.role_mentions: 
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_3 in message.role_mentions: 
