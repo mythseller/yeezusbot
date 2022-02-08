@@ -11,7 +11,7 @@ async def on_ready():
 @bot.listen()
 async def on_message(message):  
     guild = message.guild  
-    target_channel = guild.get_channel(920900596117155860)  
+    target_channel = guild.get_channel(920900596117155860----poop)  
     target_role = guild.get_role(940612391819939840) 
     role_mentions = message.role_mentions
 
