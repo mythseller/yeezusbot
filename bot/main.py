@@ -11,7 +11,7 @@ async def on_ready():
 @bot.listen()
 async def on_message(message):
 if "<@&940612391819939840>" in message.content:
-await channel.send((message.author.name + " " + searched_role.mention), embed=embed)
+await message.channel.send(message.content)
 
 @bot.command()
 async def ping(ctx):
