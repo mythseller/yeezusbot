@@ -14,10 +14,10 @@ async def on_message(message):
     target_channel = guild.get_channel(920900596117155860)  
     target_role = guild.get_role(940612391819939840) 
     role_mentions = message.role_mentions
-
+    if message.author.bot: return
     if target_role in role_mentions:
         await target_channel.send(message.content)
-    if (message.author.bot) return;
+
 
 @bot.command()
 async def ping(ctx):
