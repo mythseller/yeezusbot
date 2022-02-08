@@ -7,6 +7,11 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
+    
+@bot.event
+async def on_message(message):
+            if "<@&940612391819939840>" in message.content:
+message.client.channels.cache.get('<920900596117155860>').send(message.content)
 
 @bot.command()
 async def ping(ctx):
