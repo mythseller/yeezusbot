@@ -11,6 +11,11 @@ async def on_ready():
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
+    
+@bot.listen()
+async def on_message(message):
+    if "<@&940612391819939840>" in message.content:
+    message.client.channels.cache.get('<#920900596117155860>').send(message.content)
 
 if __name__ == "__main__":
     bot.run(TOKEN)
