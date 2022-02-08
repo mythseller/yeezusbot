@@ -4,11 +4,11 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-@bot.event
+@bot.listen()
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
-  
-@client.listen()
+
+@bot.listen()
 async def on_message(message):  
     guild = message.guild  
     target_channel = guild.get_channel(940612391819939840)  
@@ -24,3 +24,4 @@ async def ping(ctx):
 
 if __name__ == "__main__":
     bot.run(TOKEN)
+
