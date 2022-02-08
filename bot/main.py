@@ -1,6 +1,8 @@
 import os
 from discord.ext import commands
 
+embed=discord.Embed(title="CALLOUT")
+
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
@@ -19,11 +21,11 @@ async def on_message(message):
     role_mentions = message.role_mentions
 
     if role_1 in message.role_mentions: 
-        await target_channel.send(message.author.name + " -- " + message.content)
+        await target_channel.send(message.author.name + " -- " + message.content, embed=embed)
     elif role_2 in message.role_mentions: 
-        await target_channel.send(message.author.name + " -- " + message.content)
+        await target_channel.send(message.author.name + " -- " + message.content, embed=embed)
     elif role_3 in message.role_mentions: 
-        await target_channel.send(message.author.name + " -- " + message.content)
+        await target_channel.send(message.author.name + " -- " + message.content, embed=embed)
 
 
 @bot.command()
@@ -32,4 +34,3 @@ async def ping(ctx):
 
 if __name__ == "__main__":
     bot.run(TOKEN)
-
