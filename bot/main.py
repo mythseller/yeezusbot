@@ -7,11 +7,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send("pong")
-    
+  
 @client.listen()
 async def on_message(message):  
     guild = message.guild  
@@ -21,6 +17,10 @@ async def on_message(message):
 
     if target_role in role_mentions:
         await target_channel.send(message.content)
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send("pong")
 
 if __name__ == "__main__":
     bot.run(TOKEN)
