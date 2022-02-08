@@ -12,6 +12,7 @@ async def on_ready():
 async def on_message(message):
 if "<@&940612391819939840>" in message.content:
 await message.channel.send(message.content)
+await bot.process_commands(message)
 
 @bot.command()
 async def ping(ctx):
