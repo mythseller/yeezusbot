@@ -8,9 +8,9 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
     
-@bot.listen()
+@bot.event
 async def on_message(message):
-if "<@&940612391819939840>" in message.content:
+if "hello" in message.content:
 await message.channel.send(message.content)
 await bot.process_commands(message)
 
