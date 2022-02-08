@@ -12,10 +12,15 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("pong")
     
-@bot.listen()
-async def on_message(message):
-    if "<@&940612391819939840>" in message.content:
-    message.client.channels.cache.get('<#920900596117155860>').send(message.content)
+@client.listen()
+async def on_message(message):  
+    guild = message.guild  
+    target_channel = guild.get_channel(940612391819939840)  
+    target_role = guild.get_role(92090059611715586) 
+    role_mentions = message.role_mentions
+
+    if target_role in role_mentions:
+        await target_channel.send(message.content)
 
 if __name__ == "__main__":
     bot.run(TOKEN)
