@@ -11,7 +11,6 @@ async def on_ready():
 @bot.listen()
 async def on_message(message):  
     if message.author.bot: return
-    embed=embed(title="Sample Embed")
     guild = message.guild  
     target_channel = guild.get_channel(940719313638293544)  
     role_1 = guild.get_role(940612391819939840)  
@@ -20,7 +19,7 @@ async def on_message(message):
     role_mentions = message.role_mentions
 
     if role_1 in message.role_mentions: 
-        await target_channel.send(message.author.name + " -- " + message.content)
+        await target_channel.send((message.author.name + " " + searched_role.mention), embed=embed)
     elif role_2 in message.role_mentions: 
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_3 in message.role_mentions: 
