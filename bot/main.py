@@ -23,7 +23,7 @@ async def on_message(message):
     roles = [role_1, role_2, role_3]
 
     if any(role in roles for role in message.role_mentions):
-        msg = message.content.content.strip(f'<@&{role.id}>')
+        msg = message.content.strip(f'<@&{role.id}>')
         embed = discord.Embed(
             title=msg, color=0x00FF00
         )
