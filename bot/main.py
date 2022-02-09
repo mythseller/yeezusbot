@@ -25,7 +25,7 @@ async def on_message(message):
         embed = discord.Embed(title="Title", description="Desc", color=0x00ff00)
         embed.add_field(name="Field1", value="hi", inline=False)
         embed.add_field(name="Field2", value="hi2", inline=False)
-        await message.channel.send(embed=embed)
+        await target_channel.send(embed=embed)
     
 
 
