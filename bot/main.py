@@ -28,6 +28,7 @@ async def on_message(message):
             embed = discord.Embed(
                 title=msg, color=0x00FF00
             )
+            embed.add_field(name='Trade Type:', value=role.mention)
             embed.set_author(
                 name=message.author.display_name, icon_url=message.author.avatar_url
             )
