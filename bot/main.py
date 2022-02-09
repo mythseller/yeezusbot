@@ -1,6 +1,6 @@
 import os
 import discord
-import datetime
+from datetime import datetime
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix="!")
