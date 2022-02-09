@@ -1,5 +1,6 @@
 import os
 import discord
+import datetime
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix="!")
@@ -26,10 +27,9 @@ async def on_message(message):
         if role in message.role_mentions:
             msg = message.content.strip(f'<@&{role.id}>')
             embed = discord.Embed(
-                title=msg, color=0x00FF00
+                title=msg, color=0x00FF00, timestamp=datetime.now()
             )
             embed.add_field(name='Trade Type:', value=role.mention)
-            embed.add_field(name='Time:', value=<t:TIMESTAMP:t>)
             embed.set_author(
                 name=message.author.display_name, icon_url=message.author.avatar_url
             )
