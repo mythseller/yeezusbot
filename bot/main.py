@@ -11,6 +11,7 @@ async def on_ready():
 @bot.listen()
 async def on_message(message):  
     if message.author.bot: return
+    embed=embed(title="Sample Embed")
     guild = message.guild  
     target_channel = guild.get_channel(940719313638293544)  
     role_1 = guild.get_role(940612391819939840)  
