@@ -19,7 +19,7 @@ async def on_message(message):
     role_mentions = message.role_mentions
 
     if role_1 in message.role_mentions: 
-        await target_channel.send((message.author.name + " " + searched_role.mention), embed=embed(title="Sample Embed", url="https://realdrewdata.medium.com/", description="This is an embed that will show how to build an embed and the different components", color=discord.Color.blue())
+        await target_channel.send(message.author.name + " -- " + message.content)
     elif role_2 in message.role_mentions: 
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_3 in message.role_mentions: 
