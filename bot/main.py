@@ -30,6 +30,8 @@ async def on_message(message):
             color=0xFFFF00,
         )
         embed.set_thumbnail(url=message.author.avatar_url)
+        embed.timestamp = datetime.datetime.utcnow()
+        embed.set_footer(text='\u200b',icon_url="https://i.imgur.com/uZIlRnK.png")
         await target_channel.send(embed=embed)
 
 
