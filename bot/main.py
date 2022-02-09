@@ -26,10 +26,9 @@ async def on_message(message):
         if role in message.role_mentions:
             msg = message.content.strip(f'<@&{role.id}>')
             embed = discord.Embed(
-                title=msg, color=0x00FF00
+                title=msg, color=0x00FF00, timestamp=datetime.datetime.utcnow()
             )
             embed.add_field(name='Trade Type:', value=role.mention)
-            embed.timestamp = datetime.datetime.utcnow()
             embed.set_author(
                 name=message.author.display_name, icon_url=message.author.avatar_url
             )
