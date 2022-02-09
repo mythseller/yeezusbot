@@ -7,13 +7,6 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 @bot.listen()
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
-    
-@bot.command()
-async def embed(ctx):
-    channel = bot.get_channel(940719313638293544)
-    embed = discord.Embed(title="Embed test", description="A test for my discord bot", color=0x5bcdee)
-    embed.add_field(name="Hello!", value="Hello World!", inline=False)
-    await channel.send(embed=embed)
 
 @bot.listen()
 async def on_message(message):  
@@ -27,7 +20,9 @@ async def on_message(message):
     if role_1 in message.role_mentions: 
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_2 in message.role_mentions: 
-        await target_channel.send(message.author.name + " -- " + message.content)
+        myEmbed.title = "[insert the title of the embed]"
+        myEmbed.description = '[insert the description of the embed]'
+        await message.channel.send(embed=myEmbed)
     elif role_3 in message.role_mentions: 
         embed = discord.Embed(title="message.content", description="Desc", color=0x00ff00)
         await target_channel.send(embed=embed)
