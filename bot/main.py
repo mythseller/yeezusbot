@@ -18,12 +18,14 @@ async def on_message(message):
     role_3 = guild.get_role(940731660440326154) 
 
     if role_1 in message.role_mentions: 
-        embedVar = discord.Embed(title="Title", description="Desc", color=0x00ff00)
-        await target_channel.send(embed=embedVar)
+        await target_channel.send(message.author.name + " -- " + message.content)
     elif role_2 in message.role_mentions: 
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_3 in message.role_mentions: 
-        await target_channel.send(message.author.name + " -- " + message.content)
+        embed = discord.Embed(title="Title", description="Desc", color=0x00ff00)
+        embed.add_field(name="Field1", value="hi", inline=False)
+        embed.add_field(name="Field2", value="hi2", inline=False)
+        await client.send_message(message.channel, embed=embed)
     
 
 
