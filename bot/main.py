@@ -4,11 +4,6 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-@bot.command()
-async def embed(ctx):
-    embed=discord.Embed(title="Sample Embed", url="https://realdrewdata.medium.com/", description="This is an embed that will show how to build an embed and the different components", color=discord.Color.blue())
-    await ctx.send(embed=embed)
-
 @bot.listen()
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
@@ -24,7 +19,7 @@ async def on_message(message):
     role_mentions = message.role_mentions
 
     if role_1 in message.role_mentions: 
-        await target_channel.send((message.author.name + " " + searched_role.mention), embed=embed)
+        await target_channel.send((message.author.name + " " + searched_role.mention), embed=embed(title="Sample Embed", url="https://realdrewdata.medium.com/", description="This is an embed that will show how to build an embed and the different components", color=discord.Color.blue())
     elif role_2 in message.role_mentions: 
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_3 in message.role_mentions: 
