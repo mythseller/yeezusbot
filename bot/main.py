@@ -23,7 +23,7 @@ async def on_message(message):
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_3 in message.role_mentions: 
         embed = discord.Embed(title=message.content, color=0x00ff00)
-        await target_channel.send(embed=embed)
+        await target_channel.send(message.author.name + " -- " + message.content)
     
 @bot.command()
 async def ping(ctx):
