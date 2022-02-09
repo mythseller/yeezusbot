@@ -7,6 +7,13 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 @bot.listen()
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
+    
+@bot.command()
+async def embed(ctx):
+    channel = bot.get_channel(940719313638293544)
+    embed = discord.Embed(title="Embed test", description="A test for my discord bot", color=0x5bcdee)
+    embed.add_field(name="Hello!", value="Hello World!", inline=False)
+    await channel.send(embed=embed)
 
 @bot.listen()
 async def on_message(message):  
