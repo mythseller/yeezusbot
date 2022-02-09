@@ -56,7 +56,7 @@ async def on_message(message):
             embed.set_author(
                 name=message.author.display_name, icon_url=message.author.avatar_url
             )
-            await ctx.send(embed=embed)
+            await message.send(embed=embed)
 
 @bot.command()
 async def ping(ctx):
