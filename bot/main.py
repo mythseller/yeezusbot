@@ -23,9 +23,9 @@ async def on_message(message):
     roles = [role_1, role_2, role_3]
 
     if any(role in roles for role in message.role_mentions):
-        message = message.content.strip(f'<@&{role.id}>')
+        msg = message.content.content.strip(f'<@&{role.id}>')
         embed = discord.Embed(
-            title=message, color=0x00FF00
+            title=msg, color=0x00FF00
         )
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
