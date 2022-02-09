@@ -22,15 +22,16 @@ async def on_message(message):
     role_3 = guild.get_role(940731660440326154)
     roles = [role_1, role_2, role_3]
 
-    if any(role in roles for role in message.role_mentions):
-        msg = message.content.strip(f'<@&{role.id}>')
-        embed = discord.Embed(
-            title=msg, color=0x00FF00
-        )
-        embed.set_author(
-            name=message.author.display_name, icon_url=message.author.avatar_url
-        )
-        await target_channel.send(content=role.mention, embed=embed)
+    for role in roles:
+        if role in message.role_mentions:
+            msg = message.content.strip(f'<@&{role.id}>')
+            embed = discord.Embed(
+                title=msg, color=0x00FF00
+            )
+            embed.set_author(
+                name=message.author.display_name, icon_url=message.author.avatar_url
+            )
+            await target_channel.send(content=role.mention, embed=embed)
 
 
 @bot.command()
