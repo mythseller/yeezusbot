@@ -4,6 +4,11 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
+@client.command()
+async def embed(ctx):
+    embed=discord.Embed(title="Sample Embed", url="https://realdrewdata.medium.com/", description="This is an embed that will show how to build an embed and the different components", color=discord.Color.blue())
+    await ctx.send(embed=embed)
+
 @bot.listen()
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
