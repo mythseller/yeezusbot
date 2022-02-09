@@ -30,7 +30,7 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target_channel.send(content=role, embed=embed)
+        await target_channel.send(content=role.mention, embed=embed)
 
 
 @bot.command()
