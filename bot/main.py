@@ -30,7 +30,6 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        embed.set_thumbnail(url=message.author.avatar_url)
         await target_channel.send(embed=embed)
 
 
