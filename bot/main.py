@@ -22,7 +22,7 @@ async def on_message(message):
     elif role_2 in message.role_mentions: 
         myEmbed.title = "hi"
         myEmbed.description = 'yo'
-        await message.channel.send(embed=myEmbed)
+        await target_channel.send(embed=myEmbed)
     elif role_3 in message.role_mentions: 
         embed = discord.Embed(title="message.content", description="Desc", color=0x00ff00)
         await target_channel.send(embed=embed)
