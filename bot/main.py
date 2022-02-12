@@ -20,6 +20,7 @@ async def on_message(message):
     # Fetch target channels
     target1_channel = guild.get_channel(879466084116336660)
     target2_channel = guild.get_channel(882606056184897536)
+    target3_channel = guild.get_channel(879468481492447254)
     # Fetch target roles
     role_1 = guild.get_role(942052888333676634)
     role_2 = guild.get_role(942051860167159819)
@@ -90,8 +91,7 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target1_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
+        await target3_channel.send(embed=embed)
         
 @bot.command()
 async def ping(ctx):
