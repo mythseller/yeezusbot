@@ -24,7 +24,6 @@ async def on_message(message):
     role_3 = guild.get_role(940731660440326154)
 
     if role_1 in message.role_mentions:
-        msg = message.content.strip(f'<@&{role.id}>')
         await target_channel.send(message.author.name + " -- ")
         await message.channel.send(embed=embed)
     elif role_2 in message.role_mentions:
