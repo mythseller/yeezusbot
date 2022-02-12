@@ -22,7 +22,7 @@ async def on_message(message):
     role_1 = guild.get_role(940612391819939840)
     role_2 = guild.get_role(940731429426434069)
     role_3 = guild.get_role(940731660440326154)
-    roles = [role_1, role_2, role_3]
+    roles = [role_1]
 
     for role in roles:
         if role_1 in message.role_mentions:
