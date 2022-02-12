@@ -24,7 +24,7 @@ async def on_message(message):
     role_3 = guild.get_role(940731660440326154)
     roles = [role_1, role_2, role_3]
 
-
+    for role in roles:
         if role_1 in message.role_mentions:
             msg = message.content.strip(f'<@&{role.id}>')
             embed = discord.Embed(
