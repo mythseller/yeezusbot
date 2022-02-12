@@ -11,6 +11,8 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
 
+
+@bot.listen()
 async def on_message(message):
     if message.author.bot:
         return
@@ -34,6 +36,7 @@ async def on_message(message):
             await target_channel.send(embed=embed)
             await message.channel.send(embed=embed)
             
+
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
