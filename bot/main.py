@@ -34,19 +34,7 @@ async def on_message(message):
         await target_channel.send(message.author.name + " -- " + message.content)
     elif role_3 in message.role_mentions: 
         await target2_channel.send(message.author.name + " -- " + message.content)
-            
-    for role in roles:
-        if role in message.role_mentions:
-            msg = message.content.strip(f'<@&{role.id}>')
-            embed = discord.Embed(
-                title=msg, color=0x5b7e63, timestamp=datetime.now()
-            )
-            embed.add_field(name='Trade Type:', value=role.mention)
-            embed.set_author(
-                name=message.author.display_name, icon_url=message.author.avatar_url
-            )
-            await target_channel.send(embed=embed)
-            await message.channel.send(embed=embed)
+
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
