@@ -50,7 +50,7 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target2_channel.send(embed=embed)
+        await target1_channel.send(embed=embed)
         await message.channel.send(embed=embed)
 
     elif role_3 in message.role_mentions:
