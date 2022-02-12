@@ -74,7 +74,7 @@ async def on_message(message):
         await target1_channel.send(embed=embed)
         await message.channel.send(embed=embed)
         
-    elif role_6 in message.role_mentions:
+    elif role_5 in message.role_mentions:
         msg = message.content.strip(f"<@&{role_5.id}>")
         embed = discord.Embed(title=msg, color=0xe31e87, timestamp=datetime.now())
         embed.add_field(name="Trade Type:", value=role_5.mention)
