@@ -24,7 +24,7 @@ async def on_message(message):
     for role in roles:
         if role in message.role_mentions:
             msg = message.content.strip(f'<@&{role.id}>')
-            embed = discord.Embed(description=msg, color=0x00ff00, timestamp=datetime.now())
+            embed = discord.Embed(title="Market Commentary", description=msg, color=0x49a9f2, timestamp=datetime.now())
             embed.set_author(name=message.author.display_name, icon_url=message.author.avatar_url)
             await target1_channel.send(embed=embed)
             await message.channel.send(embed=embed)
