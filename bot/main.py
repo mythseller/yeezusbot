@@ -92,6 +92,7 @@ async def on_message(message):
         )
         await target1_channel.send(embed=embed)
         await message.channel.send(embed=embed)
+        
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
