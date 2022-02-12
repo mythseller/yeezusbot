@@ -19,10 +19,12 @@ async def on_message(message):
     guild = message.guild
     target_channel = guild.get_channel(940719313638293544)
     target2_channel = guild.get_channel(942055833720750081)
-    target_role = guild.get_role(940612391819939840)
+    role_1 = guild.get_role(940612391819939840)
+    role_2 = guild.get_role(940731429426434069)
+    role_3 = guild.get_role(940731660440326154)
     role_mentions = message.role_mentions
-
-    if target_role in role_mentions:
+    
+    if role_1 in role_mentions:
         msg = message.content.strip(f'<@&{role.id}>')
         embed = discord.Embed(title=msg, color=0x5b7e63, timestamp=datetime.now())
         embed.add_field(name='Trade Type:', value=role.mention)
