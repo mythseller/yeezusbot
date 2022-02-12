@@ -25,7 +25,7 @@ async def on_message(message):
 
     if role_1 in message.role_mentions:
         msg = message.content.strip(f'<@&{role.id}>')
-        await target_channel.send(message.author.name + " -- " + msg)
+        await target_channel.send(message.author.name + " -- ")
         await message.channel.send(embed=embed)
     elif role_2 in message.role_mentions:
         msg = message.content.strip(f'<@&{role.id}>')
