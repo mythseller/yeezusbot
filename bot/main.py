@@ -92,6 +92,7 @@ async def on_message(message):
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
         await target3_channel.send(embed=embed)
+        await message.channel.send(embed=embed)
         
 @bot.command()
 async def ping(ctx):
