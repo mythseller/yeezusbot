@@ -76,7 +76,7 @@ async def on_message(message):
     elif role_5 in message.role_mentions:
         msg = message.content.strip(f"<@&{role_5.id}>")
         embed = discord.Embed(title=msg, color=0xe31e87, timestamp=datetime.now())
-        embed.add_field(name="Trade Type:", value=role_3.mention)
+        embed.add_field(name="Trade Type:", value=role_5.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
@@ -84,7 +84,7 @@ async def on_message(message):
         await message.channel.send(embed=embed)
         
     elif role_6 in message.role_mentions:
-        msg = message.content.strip(f"<@&{role_3.id}>")
+        msg = message.content.strip(f"<@&{role_6.id}>")
         embed = discord.Embed(title=msg, color=0xe0dd12, timestamp=datetime.now())
         embed.add_field(name="Trade Type:", value=role_6.mention)
         embed.set_author(
