@@ -25,12 +25,7 @@ async def on_message(message):
     role_mentions = message.role_mentions
     
     if role_1 in role_mentions:
-        msg = message.content.strip(f'<@&{role.id}>')
-        embed = discord.Embed(title=msg, color=0xff0000, timestamp=datetime.now())
-        embed.add_field(name='Trade Type:', value=role.mention)
-        embed.set_author(name=message.author.display_name, icon_url=message.author.avatar_url)
-        await target_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
+        await target_channel.send(message.author.name + " -- " + message.content)
     elif role_2 in role_mentions:
         msg = message.content.strip(f'<@&{role.id}>')
         embed = discord.Embed(title=msg, color=0x00ff00, timestamp=datetime.now())
