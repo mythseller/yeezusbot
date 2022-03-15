@@ -107,7 +107,21 @@ async def on_message(message):
         await message.channel.send(embed=embed)
         await message.add_reaction(':smile:')
 
-        
+
+@bot.listen()
+async def on_message(message):
+  '''simple on message to respond if a message containing "hello" is sent'''
+  # prevent bot from answering other bots, including self
+  if message.author.bot:
+     return
+  # create message content and channel variables
+  content = message.content.lower()
+  channel = message.channel
+  # check if message includes "hello"
+  if 'hello' in content:
+     msg = await channel.send('HI!')
+     await msg.add_reaction(':heart:')
+    
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
