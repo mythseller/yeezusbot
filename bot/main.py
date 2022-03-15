@@ -105,13 +105,13 @@ async def on_message(message):
         
         await target4_channel.send(embed=embed)
         await message.channel.send(embed=embed)
-        msg7 = await ctx.send(embed=embed)
+    msg7 = await ctx.send(embed=embed)
 
-        # add reactions
-        emojis = [":smile:",":scissors:",":rofl:"]
+    # add reactions
+    emojis = [":smile:",":scissors:",":rofl:"]
 
-        for e in emojis:
-            await msg7.add_reaction(e)
+    for e in emojis:
+        await msg7.add_reaction(e)
 
         
 @bot.command()
