@@ -3,7 +3,10 @@ import discord
 from datetime import datetime
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix="!")
+intents = discord.Intents.default()
+intents.messages = True
+
+bot = commands.Bot(command_prefix="!", intents = intents)
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 
