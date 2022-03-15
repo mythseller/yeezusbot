@@ -97,13 +97,16 @@ async def on_message(message):
    
     elif role_7 in message.role_mentions:
         msg = message.content.strip(f"<@&{role_7.id}>")
-        embed = discord.Embed(title=msg, color=0xe31e87, timestamp=datetime.now())
-        embed.add_field(name="No one cared who I was until I put on the mask and went", value=role_7.mention)
+        embed = discord.Embed(title="some dumb shit", description=msg, color=0xe31e87, timestamp=datetime.now())
+        embed.add_field(name="we goin", value=role_7.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
+        
         await target4_channel.send(embed=embed)
         await message.channel.send(embed=embed)
+        message7 = await adminBug.send(embed=embed)
+        await message7.add_reaction('heart') 
 
         
 @bot.command()
