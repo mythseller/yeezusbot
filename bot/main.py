@@ -103,9 +103,8 @@ async def on_message(message):
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
         
-        await target4_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
-        await embed.add_reaction('heart') 
+        await target4_channel.send(embed=embed).add_reaction(':heart:')
+        await message.channel.send(embed=embed).add_reaction(':heart:')
 
         
 @bot.command()
