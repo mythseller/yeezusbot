@@ -3,9 +3,10 @@ import discord
 from datetime import datetime
 from discord.ext import commands
 
-intents = discord.Intents.all()
+intents = discord.Intents.default()
+intents.members = True
 
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix="!", intents=intents)
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 
