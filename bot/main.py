@@ -119,8 +119,8 @@ async def on_message(message):
   channel = message.channel
   # check if message includes "hello"
   if 'hello' in content:
-     msg = await channel.send('HI!')
-     await msg.add_reaction(':heart:')
+    msg = await channel.send('HI!')
+    await msg.add_reaction(':heart:')
     
 @bot.command()
 async def ping(ctx):
