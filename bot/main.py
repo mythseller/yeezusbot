@@ -105,7 +105,6 @@ async def on_message(message):
         
         await target4_channel.send(embed=embed)
         await message.channel.send(embed=embed)
-        message = await ctx.send(embed=embed)
         await message.add_reaction(':smile:')
 
         
