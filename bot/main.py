@@ -110,7 +110,8 @@ async def on_message(message):
         message2 = await message.channel.send(embed=embed)
         await message2.add_reaction("😔")
         await message2.add_reaction("🥳")
-
+        await target4.add_reaction("😔")
+        await target4.add_reaction("🥳")
 
 @bot.listen()
 async def on_message(message):
