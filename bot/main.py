@@ -152,10 +152,10 @@ async def on_message(message):
   content = message.content.lower()
   channel = message.channel
   # check if message includes "hello"
-  if 'hellllo' in content:
-    msg = await channel.send('HI!')
-    await msg.add_reaction("😇")
-    
+  if 'How did we do today?' in content:
+    msg = await channel.send('yeah, you bank on these dank callouts or fuck it up?')
+    await msg.add_reaction("🟢")
+    await msg.add_reaction("🔴")
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
