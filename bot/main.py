@@ -56,14 +56,9 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        target2 = await target4_channel.send(embed=embed)
-        message2 = await message.channel.send(embed=embed)
-        await message2.add_reaction("📥")
-        await message2.add_reaction("🟢")
-        await message2.add_reaction("🔴")
-        await target2.add_reaction("📥")
-        await target2.add_reaction("🟢")
-        await target2.add_reaction("🔴")
+        await target4_channel.send(embed=embed)
+        await message.channel.send(embed=embed)
+
 
     elif role_3 in message.role_mentions:
         msg = message.content.strip(f"<@&{role_3.id}>")
@@ -106,7 +101,7 @@ async def on_message(message):
    
     elif role_7 in message.role_mentions:
         msg = message.content.strip(f"<@&{role_7.id}>")
-        embed = discord.Embed(title="some dumb shit", description=msg, color=0xe31e87, timestamp=datetime.now())
+        embed = discord.Embed(title="said some dumb shit", description=msg, color=0xe31e87, timestamp=datetime.now())
         embed.add_field(name="we goin", value=role_7.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
