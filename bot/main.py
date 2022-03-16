@@ -46,6 +46,7 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
+        await target2_channel.send("<@&942052888333676634>")
         await target2_channel.send(embed=embed)
         await message.channel.send(embed=embed)
 
@@ -53,10 +54,11 @@ async def on_message(message):
         # intraday
         msg = message.content.strip(f"<@&{role_2.id}>")
         embed = discord.Embed(title=msg, color=0x349434, timestamp=datetime.now())
-        embed.add_field(name="Trade Type:", value=role_2.mention)
+        embed.add_field(name="Risk level:", value=role_2.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
+        await target1_channel.send("<@&942051860167159819>")
         target2 = await target1_channel.send(embed=embed)
         message2 = await message.channel.send(embed=embed)
         await message2.add_reaction("📥")
@@ -71,10 +73,11 @@ async def on_message(message):
         #scalp
         msg = message.content.strip(f"<@&{role_3.id}>")
         embed = discord.Embed(title=msg, color=0x782ea6, timestamp=datetime.now())
-        embed.add_field(name="Trade Type:", value=role_3.mention)
+        embed.add_field(name="Risk level:", value=role_3.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
+        await target1_channel.send("<@&942052324615004250>")
         target3 = await target1_channel.send(embed=embed)
         message3 = await message.channel.send(embed=embed)
         await message3.add_reaction("📥")
@@ -88,10 +91,11 @@ async def on_message(message):
         #risky
         msg = message.content.strip(f"<@&{role_4.id}>")
         embed = discord.Embed(title=msg, color=0xc45a25, timestamp=datetime.now())
-        embed.add_field(name="Trade Type:", value=role_4.mention)
+        embed.add_field(name="Risk level:", value=role_4.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
+        await target1_channel.send("<@&942052501228777493>")
         target4 = await target1_channel.send(embed=embed)
         message4 = await message.channel.send(embed=embed)
         await message4.add_reaction("📥")
@@ -105,10 +109,11 @@ async def on_message(message):
         #lotto
         msg = message.content.strip(f"<@&{role_5.id}>")
         embed = discord.Embed(title=msg, color=0xe31e87, timestamp=datetime.now())
-        embed.add_field(name="Trade Type:", value=role_5.mention)
+        embed.add_field(name="Risk level:", value=role_5.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
+        await target1_channel.send("<@&942052699921321984>")
         target5 = await target1_channel.send(embed=embed)
         message5 = await message.channel.send(embed=embed)
         await message5.add_reaction("🎲")
@@ -119,6 +124,7 @@ async def on_message(message):
         await target5.add_reaction("🔴")
         
     elif role_6 in message.role_mentions:
+        # futures
         msg = message.content.strip(f"<@&{role_6.id}>")
         embed = discord.Embed(title=msg, color=0xe0dd12, timestamp=datetime.now())
         embed.add_field(name="Trade Type:", value=role_6.mention)
@@ -128,6 +134,7 @@ async def on_message(message):
         await target3_channel.send(embed=embed)
    
     elif role_7 in message.role_mentions:
+        # goblin mode
         msg = message.content.strip(f"<@&{role_7.id}>")
         embed = discord.Embed(title="said some dumb shit", description=msg, color=0xe31e87, timestamp=datetime.now())
         embed.add_field(name="we goin", value=role_7.mention)
