@@ -152,7 +152,7 @@ async def on_message(message):
   content = message.content.lower()
   channel = message.channel
   # check if message includes "hello"
-  if 'How did we do today?' in content:
+  if 'did we do today' in content:
     msg = await channel.send('yeah, you bank on these dank callouts or fuck it up?')
     await msg.add_reaction("🟢")
     await msg.add_reaction("🔴")
