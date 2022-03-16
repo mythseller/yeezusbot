@@ -56,8 +56,14 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target1_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
+        target2 = await target4_channel.send(embed=embed)
+        message2= await message.channel.send(embed=embed)
+        await message2.add_reaction("📥")
+        await message2.add_reaction("🟢")
+        await message2.add_reaction("🔴")
+        await target2.add_reaction("📥")
+        await target2.add_reaction("🟢")
+        await target2.add_reaction("🔴")
 
     elif role_3 in message.role_mentions:
         msg = message.content.strip(f"<@&{role_3.id}>")
@@ -106,12 +112,12 @@ async def on_message(message):
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
 
-        target4 = await target4_channel.send(embed=embed)
-        message2 = await message.channel.send(embed=embed)
-        await message2.add_reaction("😔")
-        await message2.add_reaction("🥳")
-        await target4.add_reaction("😔")
-        await target4.add_reaction("🥳")
+        target7 = await target4_channel.send(embed=embed)
+        message7= await message.channel.send(embed=embed)
+        await message7.add_reaction("😩")
+        await message7.add_reaction("🥳")
+        await target7.add_reaction("😩")
+        await target7.add_reaction("🥳")
 
 @bot.listen()
 async def on_message(message):
