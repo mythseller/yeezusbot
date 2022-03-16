@@ -57,7 +57,7 @@ async def on_message(message):
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
         target2 = await target4_channel.send(embed=embed)
-        message2= await message.channel.send(embed=embed)
+        message2 = await message.channel.send(embed=embed)
         await message2.add_reaction("📥")
         await message2.add_reaction("🟢")
         await message2.add_reaction("🔴")
@@ -113,7 +113,7 @@ async def on_message(message):
         )
 
         target7 = await target4_channel.send(embed=embed)
-        message7= await message.channel.send(embed=embed)
+        message7 = await message.channel.send(embed=embed)
         await message7.add_reaction("😩")
         await message7.add_reaction("🥳")
         await target7.add_reaction("😩")
