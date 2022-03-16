@@ -50,45 +50,73 @@ async def on_message(message):
         await message.channel.send(embed=embed)
 
     elif role_2 in message.role_mentions:
+        # intraday
         msg = message.content.strip(f"<@&{role_2.id}>")
         embed = discord.Embed(title=msg, color=0x349434, timestamp=datetime.now())
         embed.add_field(name="Trade Type:", value=role_2.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target4_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
+        target2 = await target1_channel.send(embed=embed)
+        message2 = await message.channel.send(embed=embed)
+        await message2.add_reaction("📥")
+        await message2.add_reaction("🟢")
+        await message2.add_reaction("🔴")
+        await target2.add_reaction("📥")
+        await target2.add_reaction("🟢")
+        await target2.add_reaction("🔴")
 
 
     elif role_3 in message.role_mentions:
+        #scalp
         msg = message.content.strip(f"<@&{role_3.id}>")
         embed = discord.Embed(title=msg, color=0x782ea6, timestamp=datetime.now())
         embed.add_field(name="Trade Type:", value=role_3.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target1_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
+        target3 = await target1_channel.send(embed=embed)
+        message3 = await message.channel.send(embed=embed)
+        await message3.add_reaction("📥")
+        await message3.add_reaction("🟢")
+        await message3.add_reaction("🔴")
+        await target3.add_reaction("📥")
+        await target3.add_reaction("🟢")
+        await target3.add_reaction("🔴")
         
     elif role_4 in message.role_mentions:
+        #risky
         msg = message.content.strip(f"<@&{role_4.id}>")
         embed = discord.Embed(title=msg, color=0xc45a25, timestamp=datetime.now())
         embed.add_field(name="Trade Type:", value=role_4.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target1_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
+        target4 = await target1_channel.send(embed=embed)
+        message4 = await message.channel.send(embed=embed)
+        await message4.add_reaction("📥")
+        await message4.add_reaction("🟢")
+        await message4.add_reaction("🔴")
+        await target4.add_reaction("📥")
+        await target4.add_reaction("🟢")
+        await target4.add_reaction("🔴")
         
     elif role_5 in message.role_mentions:
+        #lotto
         msg = message.content.strip(f"<@&{role_5.id}>")
         embed = discord.Embed(title=msg, color=0xe31e87, timestamp=datetime.now())
         embed.add_field(name="Trade Type:", value=role_5.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target1_channel.send(embed=embed)
-        await message.channel.send(embed=embed)
+        target5 = await target1_channel.send(embed=embed)
+        message5 = await message.channel.send(embed=embed)
+        await message5.add_reaction("🎲")
+        await message5.add_reaction("🟢")
+        await message5.add_reaction("🔴")
+        await target5.add_reaction("🎲")
+        await target5.add_reaction("🟢")
+        await target5.add_reaction("🔴")
         
     elif role_6 in message.role_mentions:
         msg = message.content.strip(f"<@&{role_6.id}>")
