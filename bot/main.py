@@ -58,15 +58,15 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        # noti2 = await target1_channel.send(msg + " -- " + "<@&942051860167159819>")
-        # await noti2.delete()
+        noti2 = await target1_channel.send(msg + " -- " + "<@&942051860167159819>")
+        await noti2.delete()
         target2 = await target1_channel.send(embed=embed)
         message2 = await message.channel.send(embed=embed)
         await message2.add_reaction("📥")
         await message2.add_reaction("⛔️")
-        #await message2.add_reaction("🟢")
-        #await message2.add_reaction("🔴")
-        #await target2.add_reaction("📥")
+        # await message2.add_reaction("🟢")
+        # await message2.add_reaction("🔴")
+        # await target2.add_reaction("📥")
         await target2.add_reaction("🟢")
         await target2.add_reaction("🔴")
 
@@ -79,15 +79,15 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        # noti3 = await target1_channel.send(msg + " -- " + "<@&942052324615004250>")
-        # await noti3.delete()
+        noti3 = await target1_channel.send(msg + " -- " + "<@&942052324615004250>")
+        await noti3.delete()
         target3 = await target1_channel.send(embed=embed)
         message3 = await message.channel.send(embed=embed)
         await message2.add_reaction("📥")
         await message2.add_reaction("⛔️")
-        #await message2.add_reaction("🟢")
-        #await message2.add_reaction("🔴")
-        #await target2.add_reaction("📥")
+        # await message2.add_reaction("🟢")
+        # await message2.add_reaction("🔴")
+        # await target2.add_reaction("📥")
         await target2.add_reaction("🟢")
         await target2.add_reaction("🔴")
         
@@ -99,15 +99,15 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        # noti4 = await target1_channel.send(msg + " -- " + "<@&942052501228777493>")
-        # await noti4.delete()
+        noti4 = await target1_channel.send(msg + " -- " + "<@&942052501228777493>")
+        await noti4.delete()
         target4 = await target1_channel.send(embed=embed)
         message4 = await message.channel.send(embed=embed)
         await message2.add_reaction("📥")
         await message2.add_reaction("⛔️")
-        # await message2.add_reaction("🟢")
-        # await message2.add_reaction("🔴")
-        # await target2.add_reaction("📥")
+        await message2.add_reaction("🟢")
+        await message2.add_reaction("🔴")
+        await target2.add_reaction("📥")
         await target2.add_reaction("🟢")
         await target2.add_reaction("🔴")
         
@@ -119,15 +119,12 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        # noti5 = await target1_channel.send(msg + " -- " + "<@&942052699921321984>")
-        # await noti5.delete()
+        noti5 = await target1_channel.send(msg + " -- " + "<@&942052699921321984>")
+        await noti5.delete()
         target5 = await target1_channel.send(embed=embed)
         message5 = await message.channel.send(embed=embed)
         await message5.add_reaction("🎲")
         await message2.add_reaction("⛔️")
-        # await message5.add_reaction("🟢")
-        # await message5.add_reaction("🔴")
-        # await target5.add_reaction("🎲")
         await target5.add_reaction("🟢")
         await target5.add_reaction("🔴")
         
