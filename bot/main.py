@@ -63,7 +63,7 @@ async def on_message(message):
         target2 = await target1_channel.send(embed=embed)
         message2 = await message.channel.send(embed=embed)
         await message2.add_reaction("📥")
-        await message2.add_reaction("🙅‍♂️")
+        await message2.add_reaction("❌")
         await target2.add_reaction("🟢")
         await target2.add_reaction("🔴")
 
@@ -81,7 +81,7 @@ async def on_message(message):
         target3 = await target1_channel.send(embed=embed)
         message3 = await message.channel.send(embed=embed)
         await message3.add_reaction("📥")
-        await message3.add_reaction("🙅‍♂️")
+        await message3.add_reaction("❌")
         await target3.add_reaction("🟢")
         await target3.add_reaction("🔴")
         
@@ -98,7 +98,7 @@ async def on_message(message):
         target4 = await target1_channel.send(embed=embed)
         message4 = await message.channel.send(embed=embed)
         await message4.add_reaction("📥")
-        await message4.add_reaction("🙅‍♂️")
+        await message4.add_reaction("❌")
         await target4.add_reaction("🟢")
         await target4.add_reaction("🔴")
         
@@ -115,7 +115,7 @@ async def on_message(message):
         target5 = await target1_channel.send(embed=embed)
         message5 = await message.channel.send(embed=embed)
         await message5.add_reaction("🎲")
-        await message5.add_reaction("⛔️")
+        await message5.add_reaction("️❌")
         await target5.add_reaction("🟢")
         await target5.add_reaction("🔴")
         
@@ -141,9 +141,7 @@ async def on_message(message):
         target7 = await target4_channel.send(embed=embed)
         message7 = await message.channel.send(embed=embed)
         await message7.add_reaction("😩")
-        # await message7.add_reaction("🥳")
         await target7.add_reaction("😩")
-        # await target7.add_reaction("🥳")
 
 @bot.listen()
 async def on_message(message):
