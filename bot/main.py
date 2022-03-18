@@ -63,10 +63,7 @@ async def on_message(message):
         target2 = await target1_channel.send(embed=embed)
         message2 = await message.channel.send(embed=embed)
         await message2.add_reaction("📥")
-        await message2.add_reaction("⛔️")
-        # await message2.add_reaction("🟢")
-        # await message2.add_reaction("🔴")
-        # await target2.add_reaction("📥")
+        await message2.add_reaction("🙅‍♂️")
         await target2.add_reaction("🟢")
         await target2.add_reaction("🔴")
 
@@ -83,13 +80,10 @@ async def on_message(message):
         await noti3.delete()
         target3 = await target1_channel.send(embed=embed)
         message3 = await message.channel.send(embed=embed)
-        await message2.add_reaction("📥")
-        await message2.add_reaction("⛔️")
-        # await message2.add_reaction("🟢")
-        # await message2.add_reaction("🔴")
-        # await target2.add_reaction("📥")
-        await target2.add_reaction("🟢")
-        await target2.add_reaction("🔴")
+        await message3.add_reaction("📥")
+        await message3.add_reaction("🙅‍♂️")
+        await target3.add_reaction("🟢")
+        await target3.add_reaction("🔴")
         
     elif role_4 in message.role_mentions:
         #risky
@@ -103,13 +97,10 @@ async def on_message(message):
         await noti4.delete()
         target4 = await target1_channel.send(embed=embed)
         message4 = await message.channel.send(embed=embed)
-        await message2.add_reaction("📥")
-        await message2.add_reaction("⛔️")
-        await message2.add_reaction("🟢")
-        await message2.add_reaction("🔴")
-        await target2.add_reaction("📥")
-        await target2.add_reaction("🟢")
-        await target2.add_reaction("🔴")
+        await message4.add_reaction("📥")
+        await message4.add_reaction("🙅‍♂️")
+        await target4.add_reaction("🟢")
+        await target4.add_reaction("🔴")
         
     elif role_5 in message.role_mentions:
         #lotto
@@ -124,7 +115,7 @@ async def on_message(message):
         target5 = await target1_channel.send(embed=embed)
         message5 = await message.channel.send(embed=embed)
         await message5.add_reaction("🎲")
-        await message2.add_reaction("⛔️")
+        await message5.add_reaction("⛔️")
         await target5.add_reaction("🟢")
         await target5.add_reaction("🔴")
         
