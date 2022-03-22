@@ -46,8 +46,17 @@ async def on_message(message):
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
+        embed2 = discord.Embed(
+            title=msg,
+            color=0x0be60b,
+            timestamp=datetime.now(),
+        )
+        embed2.set_author(
+            name=message.author.display_name, icon_url=message.author.avatar_url
+        )
         await target2_channel.send("<@&942052888333676634>")
         await target2_channel.send(embed=embed)
+        await target3_channel.send(embed=embed2)
         await message.channel.send(embed=embed)
 
     elif role_2 in message.role_mentions:
