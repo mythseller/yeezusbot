@@ -21,28 +21,28 @@ async def on_message(message):
         return
     guild = message.guild
     # Fetch target channels
-    target1_channel = guild.get_channel(879466084116336660)
-    target2_channel = guild.get_channel(882606056184897536)
-    target3_channel = guild.get_channel(879468481492447254)
-    target4_channel = guild.get_channel(879467246953570305)
+    callout_channel = guild.get_channel(879466084116336660)
+    spy_channel = guild.get_channel(882606056184897536)
+    futures_channel = guild.get_channel(879468481492447254)
+    shitposting_channel = guild.get_channel(879467246953570305)
     # Fetch target roles
-    role_1 = guild.get_role(942052888333676634)
-    role_2 = guild.get_role(942051860167159819)
-    role_3 = guild.get_role(942052324615004250)
-    role_4 = guild.get_role(942052501228777493)
-    role_5 = guild.get_role(942052699921321984)
-    role_6 = guild.get_role(942052789100617728)
-    role_7 = guild.get_role(950706317482410015)
+    spy_role = guild.get_role(942052888333676634)
+    intraday_role = guild.get_role(942051860167159819)
+    scalp_role = guild.get_role(942052324615004250)
+    risky_role = guild.get_role(942052501228777493)
+    lotto_role = guild.get_role(942052699921321984)
+    futures_role = guild.get_role(942052789100617728)
+    goblin_role = guild.get_role(950706317482410015)
 
-    if role_1 in message.role_mentions:
-        msg = message.content.strip(f"<@&{role_1.id}>")
+    if spy_role in message.role_mentions:
+        msg = message.content.strip(f"<@&{spy_role.id}>")
         embed = discord.Embed(
             title="Market Commentary",
             description=msg,
             color=0x0be60b,
             timestamp=datetime.now(),
         )
-        embed.add_field(name="Index:", value=role_1.mention)
+        # embed.add_field(name="Index:", value=spy_role.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
@@ -54,103 +54,109 @@ async def on_message(message):
         embed2.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target2_channel.send("<@&942052888333676634>")
-        await target2_channel.send(embed=embed)
-        await target3_channel.send(embed=embed2)
+        await spy_channel.send("<@&942052888333676634>")
+        await spy_channel.send(embed=embed)
+        await futures_channel.send(embed=embed2)
         await message.channel.send(embed=embed)
 
-    elif role_2 in message.role_mentions:
+    elif intraday_role in message.role_mentions:
         # intraday
-        msg = message.content.strip(f"<@&{role_2.id}>")
+        msg = message.content.strip(f"<@&{intraday_role.id}>")
         embed = discord.Embed(title=msg, color=0x349434, timestamp=datetime.now())
-        embed.add_field(name="Risk level:", value=role_2.mention)
+        # embed.add_field(name="Risk level:", value=intraday_role.mention)
+        embed.add_field(name="Risk level:", value="Intraday")
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        noti2 = await target1_channel.send(msg + " -- " + "<@&942051860167159819>")
-        await noti2.delete()
-        target2 = await target1_channel.send(embed=embed)
-        message2 = await message.channel.send(embed=embed)
-        await message2.add_reaction("📥")
-        await message2.add_reaction("❌")
-        await target2.add_reaction("🟢")
-        await target2.add_reaction("🔴")
+        noti = await callout_channel.send(msg + f"<@&{intraday_role.id}>")
+        await noti.delete()
+        targetEmoji = await callout_channel.send(embed=embed)
+        messageEmoji = await message.channel.send(embed=embed)
+        await messageEmoji.add_reaction("👍")
+        await messageEmoji.add_reaction("❌")
+        # await targetEmoji.add_reaction("👍")
+        # await targetEmoji.add_reaction("❌")
 
 
-    elif role_3 in message.role_mentions:
+    elif scalp_role in message.role_mentions:
         #scalp
-        msg = message.content.strip(f"<@&{role_3.id}>")
+        msg = message.content.strip(f"<@&{scalp_role.id}>")
         embed = discord.Embed(title=msg, color=0x782ea6, timestamp=datetime.now())
-        embed.add_field(name="Risk level:", value=role_3.mention)
+        # embed.add_field(name="Risk level:", value=scalp_role.mention)
+        embed.add_field(name="Risk level:", value="Scalp")
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        noti3 = await target1_channel.send(msg + " -- " + "<@&942052324615004250>")
-        await noti3.delete()
-        target3 = await target1_channel.send(embed=embed)
-        message3 = await message.channel.send(embed=embed)
-        await message3.add_reaction("📥")
-        await message3.add_reaction("❌")
-        await target3.add_reaction("🟢")
-        await target3.add_reaction("🔴")
+        noti = await callout_channel.send(msg + f"<@&{scalp_role.id}>")
+        await noti.delete()
+        targetEmoji = await callout_channel.send(embed=embed)
+        messageEmoji = await message.channel.send(embed=embed)
+        await messageEmoji.add_reaction("👍")
+        await messageEmoji.add_reaction("❌")
+        # await targetEmoji.add_reaction("👍")
+        # await targetEmoji.add_reaction("❌")
         
-    elif role_4 in message.role_mentions:
+    elif risky_role in message.role_mentions:
         #risky
-        msg = message.content.strip(f"<@&{role_4.id}>")
+        msg = message.content.strip(f"<@&{risky_role.id}>")
         embed = discord.Embed(title=msg, color=0xc45a25, timestamp=datetime.now())
-        embed.add_field(name="Risk level:", value=role_4.mention)
+        # embed.add_field(name="Risk level:", value=risky_role.mention)
+        embed.add_field(name="Risk level:", value="Risky")
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        noti4 = await target1_channel.send(msg + " -- " + "<@&942052501228777493>")
-        await noti4.delete()
-        target4 = await target1_channel.send(embed=embed)
-        message4 = await message.channel.send(embed=embed)
-        await message4.add_reaction("📥")
-        await message4.add_reaction("❌")
-        await target4.add_reaction("🟢")
-        await target4.add_reaction("🔴")
+        noti = await callout_channel.send(msg + f"<@&{risky_role.id}>")
+        await noti.delete()
+        targetEmoji = await callout_channel.send(embed=embed)
+        messageEmoji = await message.channel.send(embed=embed)
+        await messageEmoji.add_reaction("👍")
+        await messageEmoji.add_reaction("❌")
+        # await targetEmoji.add_reaction("👍")
+        # await targetEmoji.add_reaction("❌")
         
-    elif role_5 in message.role_mentions:
+    elif lotto_role in message.role_mentions:
         #lotto
-        msg = message.content.strip(f"<@&{role_5.id}>")
+        msg = message.content.strip(f"<@&{lotto_role.id}>")
         embed = discord.Embed(title=msg, color=0xe31e87, timestamp=datetime.now())
-        embed.add_field(name="Risk level:", value=role_5.mention)
+        # embed.add_field(name="Risk level:", value=lotto_role.mention)
+        embed.add_field(name="Risk level:", value="Lotto")
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        noti5 = await target1_channel.send(msg + " -- " + "<@&942052699921321984>")
-        await noti5.delete()
-        target5 = await target1_channel.send(embed=embed)
-        message5 = await message.channel.send(embed=embed)
-        await message5.add_reaction("🎲")
-        await message5.add_reaction("️❌")
-        await target5.add_reaction("🟢")
-        await target5.add_reaction("🔴")
+        noti = await callout_channel.send(msg + f"<@&{lotto_role.id}>")
+        await noti.delete()
+        targetEmoji = await callout_channel.send(embed=embed)
+        targetEmoji = await message.channel.send(embed=embed)
+        await messageEmoji.add_reaction("👍")
+        await messageEmoji.add_reaction("❌")
+        # await targetEmoji.add_reaction("👍")
+        # await targetEmoji.add_reaction("❌")
         
-    elif role_6 in message.role_mentions:
+    elif futures_role in message.role_mentions:
         # futures
-        msg = message.content.strip(f"<@&{role_6.id}>")
+        msg = message.content.strip(f"<@&{futures_role.id}>")
         embed = discord.Embed(title=msg, color=0xe0dd12, timestamp=datetime.now())
-        embed.add_field(name="Trade Type:", value=role_6.mention)
+        # embed.add_field(name="Trade Type:", value=futures_role.mention)
+        # embed.add_field(name="Risk level:", value="Futures")
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
-        await target3_channel.send(embed=embed)
+        await futures_channel.send(embed=embed)
    
-    elif role_7 in message.role_mentions:
+    elif goblin_role in message.role_mentions:
         # goblin mode
-        msg = message.content.strip(f"<@&{role_7.id}>")
+        msg = message.content.strip(f"<@&{goblin_role.id}>")
         embed = discord.Embed(title="said some dumb shit", description=msg, color=0xe31e87, timestamp=datetime.now())
-        embed.add_field(name="we goin", value=role_7.mention)
+        # embed.add_field(name="we goin", value=goblin_role.mention)
+        embed.add_field(name="we goin", value=goblin_role.mention)
         embed.set_author(
             name=message.author.display_name, icon_url=message.author.avatar_url
         )
 
-        target7 = await target4_channel.send(embed=embed)
-        message7 = await message.channel.send(embed=embed)
-        await message7.add_reaction("😩")
-        await target7.add_reaction("😩")
+        targetEmoji = await shitposting_channel.send(embed=embed)
+        messageEmoji = await message.channel.send(embed=embed)
+        await messageEmoji.add_reaction("😩")
+        await targetEmoji.add_reaction("😩")
 
 @bot.listen()
 async def on_message(message):
